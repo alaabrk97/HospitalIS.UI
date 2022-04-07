@@ -1,0 +1,209 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container mt-5 col-md-12">
+    <div *ngIf="message" class="alert alert-primary" role="alert">
+        update success
+    </div>
+    <form [formGroup]="editPatient" (ngSubmit)="updateData()">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="panel-title pull-left" style="font-size: 28px;">
+                        Edit Patient
+                    </h3>
+                    <button type="submit" id="btnSubmit" class="btn btn-success pull-right">
+                        <i class="fa fa-save"></i>
+                        &nbsp;Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="con">
+            <div class="info">Basi Information</div>
+            <div class="row g-3 c">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="id" class="control-label">Name</label>
+                        <input type="text" readonly class="form-control" id="id" placeholder="Name"
+                            formControlName="id" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="birthday" class="control-label">Birth Date</label>
+                        <input type="datetime" class="form-control" id="birthday" formControlName="birthDate" />
+
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Gender</label>
+                        <select asp-for="Gender" class="form-control" formControlName="gender">
+                            <option> Select Gender...</option>
+                            <option value="0"> Male</option>
+                            <option value="1"> Femal</option>
+                        </select>
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="birthday" class="control-label">Natinality</label>
+                        <input type="text" class="form-control" id="birthday" placeholder="Natinality"
+                            formControlName="natinality" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label">CitizenId</label>
+                        <input type="text" class="form-control" id="name" placeholder="CitizenId"
+                            formControlName="citizenId" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Address info</div>
+            <div class="row g-3 c">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="country" class="control-label">Country</label>
+                        <input type="text" class="form-control" id="country" formControlName="country" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city" class="control-label">City</label>
+                        <input type="text" class="form-control" id="city" formControlName="city" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="street" class="control-label">Street</label>
+                        <input type="text" class="form-control" id="street" formControlName="street" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="address1" class="control-label">Address1</label>
+                        <input type="text" class="form-control" id="address1" formControlName="address1" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="address2" class="control-label">Address2</label>
+                        <input type="text" class="form-control" id="address2" formControlName="address2" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Contact Information</div>
+            <div class="row g-3 c">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="email" class="control-label">E-mail Address</label>
+                        <input type="email" class="form-control" id="email" formControlName="email" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phonenumber" class="control-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phonenumber" formControlName="phoneNumber" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactperson" class="control-label">Contact Person</label>
+                        <input type="text" class="form-control" id="contactperson" formControlName="contactPerson" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactrelation" class="control-label">Contact Relation</label>
+                        <input type="text" class="form-control" id="contactrelation"
+                            formControlName="contactRelation" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactphone" class="control-label">ContactPhone</label>
+                        <input type="text" class="form-control" id="contactphone" formControlName="contactPhone" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Hospital information</div>
+            <div class="row g-3 c">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fileno" class="control-label">File Number</label>
+                        <input type="number" class="form-control" id="fileno" formControlName="fileNo" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="firstvisitdate" class="control-label">First Visit Date</label>
+                        <input readonly type="datetime" class="form-control" id="firstvisitdate"
+                            formControlName="firstVisitDate" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="firstvisitdate" class="control-label">Record Creation Date</label>
+                        <input readonly type="datetime" class="form-control" name="recordCreationDate"
+                            formControlName="recordCreationDate">
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="recordCreationDate" formControlName="recordCreationDate">
+        </div>
+
+    </form>
+
+</div><!-- end div container-->

@@ -1,0 +1,90 @@
+<!---------------------- List of Patients ------------------------->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container mt-5 col-md-12">
+    <form ngForm="form">
+        <div class=" page-header">
+            <h3>Patient List</h3>
+        </div>
+        <div class="panel table-responsive">
+            <div class="panel-heading info">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div>List</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="pull-right">
+                            <span>number : {{numSize}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="pagination t">
+                <li class="page-item ">
+                    <a class="page-link" (click)="next()">Next</a>
+                </li>
+                <li class="page-item"><a class="page-link">{{numPages}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" (click)="Previous()">Previous</a>
+                </li>
+            </ul>
+            <table class="table table-hover  borderless">
+                <thead>
+                    <th>FileNo</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Country</th>
+                    <th>City</th>
+                    <th>Natinality</th>
+                    <th>CitizenId</th>
+                    <th>FirstVisitDate</th>
+                    <th>RecordCreationDate</th>
+                    <th>PhoneNumber</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let patient of service.patients">
+                        <td> {{patient.fileNo}}</td>
+                        <td> {{patient.name}}</td>
+                        <td>
+                            <div *ngIf="patient.gender==0">Male</div>
+                            <div *ngIf="patient.gender==1">Female</div>
+                        </td>
+                        <td> {{patient.country}}</td>
+                        <td> {{patient.city}}</td>
+                        <td> {{patient.natinality}}</td>
+                        <td> {{patient.citizenId}}</td>
+                        <td>{{patient.firstVisitDate}}</td>
+                        <td> {{patient.recordCreationDate}}</td>
+                        <td> {{patient.phoneNumber}}</td>
+                        <td>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a class="btn btn-danger mytooltip">
+                                        <i (click)="deletePat(patient.id)" class="fa fa-trash"></i>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a class="btn btn-warning mytooltip">
+                                        <i routerLink="/updatepatient/{{patient.id}}" class=" fa fa-edit"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <ul class="pagination t">
+                <li class="page-item ">
+                    <a class="page-link" (click)="next()">Next</a>
+                </li>
+                <li class="page-item"><a class="page-link">{{numPages}}</a></li>
+                <li class="page-item">
+                    <a class="page-link" (click)="Previous()">Previous</a>
+                </li>
+            </ul>
+        </div>
+    </form>
+</div>

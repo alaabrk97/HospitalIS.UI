@@ -1,0 +1,203 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="container mt-5 col-md-12">
+    <form ngForm="form" (submit)="submit()">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="panel-title pull-left" style="font-size: 28px;">
+                        Create New Patient
+                    </h3>
+                    <button type="submit" id="btnSubmit" class="btn btn-success pull-right">
+                        <i class="fa fa-save"></i>
+                        &nbsp;Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" [(ngModel)]="service.patient.id" [ngModelOptions]="{standalone:true}" required
+            minlength="4">
+        <div class="con">
+            <div class="info">Basi Information</div>
+            <div class="row g-3 c">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Name"
+                            [(ngModel)]="service.patient.name" [ngModelOptions]="{standalone:true}" required required />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="birthday" class="control-label">Birth Date</label>
+                        <input type="date" class="form-control" id="birthday" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.birthdate" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="name" class="control-label">Gender</label>
+                        <select asp-for="Gender" class="form-control">
+                            <option> Select Gender...</option>
+                            <option value="0"> Male</option>
+                            <option value="1"> Femal</option>
+                        </select>
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="birthday" class="control-label">Natinality</label>
+                        <input type="text" class="form-control" id="birthday" placeholder="Natinality"
+                            [(ngModel)]="service.patient.natinality" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name" class="control-label">CitizenId</label>
+                        <input type="text" class="form-control" id="name" placeholder="CitizenId"
+                            [(ngModel)]="service.patient.citizenId" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Address info</div>
+            <div class="row g-3 c">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="country" class="control-label">Country</label>
+                        <input type="text" class="form-control" id="country" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.country" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="city" class="control-label">City</label>
+                        <input type="text" class="form-control" id="city" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.city" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="street" class="control-label">Street</label>
+                        <input type="text" class="form-control" id="street" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.street" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="address1" class="control-label">Address1</label>
+                        <input type="text" class="form-control" id="address1" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.address1" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="address2" class="control-label">Address2</label>
+                        <input type="text" class="form-control" id="address2" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.address2" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Contact Information</div>
+            <div class="row g-3 c">
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label for="email" class="control-label">E-mail Address</label>
+                        <input type="email" class="form-control" id="email" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.email" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="phonenumber" class="control-label">Phone Number</label>
+                        <input type="text" class="form-control" id="phonenumber"
+                            [(ngModel)]="service.patient.phoneNumber" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactperson" class="control-label">Contact Person</label>
+                        <input type="text" class="form-control" id="contactperson"
+                            [(ngModel)]="service.patient.contactPerson" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactrelation" class="control-label">Contact Relation</label>
+                        <input type="text" class="form-control" id="contactrelation"
+                            [(ngModel)]="service.patient.contactRelation" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="contactphone" class="control-label">ContactPhone</label>
+                        <input type="text" class="form-control" id="contactphone"
+                            [(ngModel)]="service.patient.contactPhone" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end div con-->
+
+        <div class="con">
+            <div class="info">Hospital information</div>
+            <div class="row g-3 c">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fileno" class="control-label">File Number</label>
+                        <input type="number" class="form-control" id="fileno" [ngModelOptions]="{standalone:true}"
+                            [(ngModel)]="service.patient.fileNo" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstvisitdate" class="control-label">First Visit Date</label>
+                        <input type="date" class="form-control" id="firstvisitdate"
+                            [(ngModel)]="service.patient.firstVisitDate" [ngModelOptions]="{standalone:true}" />
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" name="id" [(ngModel)]="service.patient.recordCreationDate">
+        </div>
+
+    </form>
+
+</div><!-- end div container-->
